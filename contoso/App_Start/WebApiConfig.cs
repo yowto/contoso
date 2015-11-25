@@ -21,6 +21,9 @@ namespace contoso
                 defaults: new { id = RouteParameter.Optional }
             );
 
+            // add authorisation
+            config.Filters.Add(new AuthorizeAttribute());
+
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
         }

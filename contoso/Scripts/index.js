@@ -1,9 +1,7 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
    
     loadStudents();
-       
-    
-    
+     
 });
 
 function loadStudents() {
@@ -16,7 +14,17 @@ function loadStudents() {
 
     function setupStudentsTable(students) {
         console.log(students);
+        console.log(Account);
         for (i = 0; i < students.length; i++) {
+
+            var obj = students[i];
+
+            for (var p in obj) {
+                if (obj.hasOwnProperty(p) && obj[p] == "Anand") {
+                    console.log(obj);
+                }
+            }
+
             var row = document.createElement('tr');
 
             var lastnamecol = document.createElement('td');
@@ -29,5 +37,6 @@ function loadStudents() {
 
             studentsTable.appendChild(row);
         }
+
     }
 }
