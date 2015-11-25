@@ -7,6 +7,7 @@ using System.Web;
 
 namespace contoso.Models
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class contosoContext : DbContext
     {
         public class MyConfiguration : DbMigrationsConfiguration<contosoContext>
@@ -14,7 +15,7 @@ namespace contoso.Models
             public MyConfiguration()
             {
                 this.AutomaticMigrationsEnabled = true;
-                this.AutomaticMigrationDataLossAllowed = false;
+                this.AutomaticMigrationDataLossAllowed = true;
             }
 
             protected override void Seed(contosoContext context)
@@ -52,7 +53,7 @@ namespace contoso.Models
                     {
                         StudentID = students.Single(s => s.LastName == "Alexander").ID,
                         CourseID = courses.Single(c => c.Title == "Chemistry" ).CourseID,
-                        AssignmentTitle = "Assignment 1",
+                        AssignmentTitle = "Test1",
                         DueDate = DateTime.Parse("2015-12-01"),
                         Percent = 10
                     },
@@ -60,7 +61,7 @@ namespace contoso.Models
                     {
                         StudentID = students.Single(s => s.LastName == "Anand").ID,
                         CourseID = courses.Single(c => c.Title == "Chemistry" ).CourseID,
-                        AssignmentTitle = "Assignment 1",
+                        AssignmentTitle = "Test 1",
                         DueDate = DateTime.Parse("2015-12-01"),
                         Percent = 10
                     }
