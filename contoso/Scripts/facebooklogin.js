@@ -20,6 +20,7 @@ function statusChangeCallback(response) {
         document.getElementById('status').innerHTML = 'Please log ' +
             'into Facebook.';
     }
+    localStorage.response = response;
 }
 
 // This function is called when someone finishes with the Login
@@ -84,4 +85,3 @@ function testAPI() {
     });
 }
 
-var Account = response;

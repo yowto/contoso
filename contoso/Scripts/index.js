@@ -14,7 +14,7 @@ function loadStudents() {
 
     function setupStudentsTable(students) {
         console.log(students);
-        console.log(Account);
+        console.log(localStorage.response);
         for (i = 0; i < students.length; i++) {
 
             var obj = students[i];
