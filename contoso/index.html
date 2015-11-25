@@ -7,8 +7,9 @@
     <link href="Content/style.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/index.js"></script>
     <script src="Scripts/StudentModule.js"></script>
+    <script src="Scripts/facebooklogin.js"></script>
+    <script src="Scripts/index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -26,5 +27,7 @@
             </table>
         </div>
     </div>
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
 </body>
 </html>

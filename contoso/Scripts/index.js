@@ -1,5 +1,9 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
+   
     loadStudents();
+       
+    
+    
 });
 
 function loadStudents() {
