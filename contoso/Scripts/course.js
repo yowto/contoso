@@ -22,9 +22,18 @@ function loadCourses() {
      
             var row = document.createElement('tr');
 
+            var readField = document.createElement('div');
+            readField.setAttribute("id", "read" + courses[i].CourseID);
+            readField.setAttribute("float", "left");
             var coursetitlecol = document.createElement('td');
             coursetitlecol.innerHTML = courses[i].Title;
-            row.appendChild(coursetitlecol);
+
+            
+            
+            readField.appendChild(coursetitlecol);
+            row.appendChild(readField);
+            row.appendChild(editField);
+            
 
             var percentcompletecol = document.createElement('td');
             percentcompletecol.innerHTML = courses[i].PercentComplete;
@@ -34,14 +43,22 @@ function loadCourses() {
             var delCourseBtn = document.createElement("button");
             delCourseBtn.setAttribute("class", "btn btn-default delete-course");
             delCourseBtn.setAttribute("id", courses[i].CourseID);
-            console.log(courses[i].CourseID);
             delCourseBtn.innerHTML = "Delete Course";
             deletecol.appendChild(delCourseBtn);
+
+            var editCourseBtn = document.createElement("button");
+            editCourseBtn.setAttribute("class", "btn btn-default update-course");
+            editCourseBtn.setAttribute("id", "edit" + courses[i].CourseID);
+            editCourseBtn.innerHTML = "Edit Course";
+            deletecol.appendChild(editCourseBtn);
+
             row.appendChild(deletecol);
 
             coursesTable.appendChild(row);
 
+
             deleteCourse(courses[i].CourseID);
+            updateCourse(courses[i].CourseID);
         }
 
         
@@ -68,7 +85,6 @@ function createCourse() {
 }
 
 function deleteCourse(ID) {
-    console.log("deletey");
     
     document.getElementById(ID).addEventListener("click", function () {
         
@@ -82,4 +98,10 @@ function deleteCourse(ID) {
         })
     });
     
+}
+
+function updateCourse(ID) {
+    document.getElementById("edit" + ID).addEventListener("click", function () {
+        $("#update" + ID).toggle();
+    });
 }

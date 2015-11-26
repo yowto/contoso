@@ -37,6 +37,21 @@
                     console.log("Deleted");
                 }
             });
+        },
+        updateCourse: function (id,course, callback) {
+            $.ajax({
+                type: "PUT",
+                dataType: "json",
+                data: course,
+                url: "https://contoso-jhut043.azurewebsites.net/api/courses/" + id,
+                success: function (data) {
+                    callback();
+                    console.log("updateCourse success");
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert("Failed " + textStatus + " " + errorThrown);
+                }
+            })
         }
     };
 }());
