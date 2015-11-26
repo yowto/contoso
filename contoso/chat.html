@@ -7,7 +7,8 @@
     <link href="Content/style.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    
+
+    <script src="Scripts/facebooklogin.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
     <script>
         jQuery("#responsive_headline").fitText();
@@ -87,5 +88,8 @@
             });
         });
     </script>
+
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
 </body>
 </html>

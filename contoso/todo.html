@@ -9,6 +9,7 @@
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
     <script src="Scripts/jquery.todoList.js"></script>
+    <script src="Scripts/facebooklogin.js"></script>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 
@@ -17,6 +18,7 @@
     </script>
 </head>
 <body>
+
     <!--navigation bar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -36,10 +38,13 @@
                     <li><a href="/todo.html">To Do</a></li>
                     <li><a href="/chat.html">Chat</a></li>
                 </ul>
+
             </div>
         </div>
     </nav>
     <div class="container">
+        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+        <div id="status"></div>
         <!--Add to do list via jquery plugin-->
         <div id="todolist"></div>
     </div>
@@ -60,5 +65,7 @@
     });})(jQuery);
 
     </script>
+
+    
 </body>
 </html>

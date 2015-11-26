@@ -8,14 +8,11 @@
     <link href="Content/fakeLoader.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/StudentModule.js"></script>
-    <script src="Scripts/facebooklogin.js"></script>
+    <script src="Scripts/StudentModule.js"></script>   
     <script src="Scripts/index.js"></script>
-    <script src="Scripts/jquery.fittext.js"></script>
     <script src="Scripts/fakeLoader.min.js"></script>
-    <script>
-        jQuery("#tblstudentcontent").fitText();
-    </script>
+    <script src="Scripts/facebooklogin.js"></script>
+   
 </head>
 <body>
     <div id="fakeLoader"></div>
@@ -42,7 +39,8 @@
             </div>
         </div>
     </nav>
-    
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+    <div id="status"></div>
     <!--Main body-->
     <div class="container">
         <div class="table-responsive">
@@ -59,8 +57,7 @@
             </table>
         </div>
     </div>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-    <div id="status"></div>
+    
     <script type="text/javascript">
         $("#fakeloader").fakeLoader({
             timeToHide: 1200, //Time in milliseconds for fakeLoader disappear
