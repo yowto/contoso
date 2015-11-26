@@ -147,6 +147,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\fakeLoader.css" />
     <Content Include="Content\style.css" />
     <Content Include="courses.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -163,6 +164,7 @@
     <None Include="Properties\PublishProfiles\contoso-jhut043 - Web Deploy.pubxml" />
     <Content Include="Scripts\AssignmentModule.js" />
     <Content Include="Scripts\assignments.js" />
+    <Content Include="Scripts\fakeLoader.min.js" />
     <Content Include="Scripts\jquery.fittext.js" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
@@ -174,7 +176,6 @@
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
     <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\jquery.percentageloader-0.1.min.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="Scripts\jquery.todoList.js" />

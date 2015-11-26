@@ -5,18 +5,20 @@
 	<meta charset="utf-8" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/fakeLoader.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/StudentModule.js"></script>
     <script src="Scripts/facebooklogin.js"></script>
     <script src="Scripts/index.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
-    <script src="Scripts/jquery.percentageloader-0.1.min.js"></script>
+    <script src="Scripts/fakeLoader.min.js"></script>
     <script>
         jQuery("#tblstudentcontent").fitText();
     </script>
 </head>
 <body>
+    <div id="fakeLoader"></div>
     <!--navigation bar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -59,5 +61,13 @@
     </div>
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
     <div id="status"></div>
+    <script type="text/javascript">
+        $("#fakeloader").fakeLoader({
+            timeToHide: 1200, //Time in milliseconds for fakeLoader disappear
+            zIndex: 999, // Default zIndex
+            spinner: "spinner1",//Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
+            bgColor: "#2ecc71", //Hex, RGB or RGBA colors
+        });
+    </script>
 </body>
 </html>
