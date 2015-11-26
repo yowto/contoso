@@ -1,5 +1,8 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
    
+    $("#tblstudentcontent").percentageLoader({
+        width: 180, height: 180, progress: 0.5, value: '512kb'
+    });
     loadStudents();
      
 });
