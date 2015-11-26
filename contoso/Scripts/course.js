@@ -78,7 +78,7 @@ function loadCourses() {
 
             coursesTable.appendChild(row);
 
-            $("update" + courses[i].CourseID).hide();
+            $("#update" + courses[i].CourseID).hide();
             deleteCourse(courses[i].CourseID);
             editCourse(courses[i].CourseID);
             updateCourse(courses[i].CourseID);
