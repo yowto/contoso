@@ -33,7 +33,7 @@ function loadCourses() {
             editField.setAttribute("id", "update" + courses[i].CourseID);
             editField.setAttribute("float", "left");
             editField.setAttribute("clear", "left");
-            $("update" + courses[i].CourseID).hide();
+            
             var updateForm = document.createElement('form');
             updateForm.setAttribute("role", "form");
             var updateTitle = document.createElement('textarea');
@@ -78,7 +78,7 @@ function loadCourses() {
 
             coursesTable.appendChild(row);
 
-
+            $("update" + courses[i].CourseID).hide();
             deleteCourse(courses[i].CourseID);
             editCourse(courses[i].CourseID);
             updateCourse(courses[i].CourseID);
