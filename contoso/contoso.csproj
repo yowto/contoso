@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assignments.html" />
     <Content Include="chat.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -136,6 +137,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Properties\PublishProfiles\contoso-jhut043 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\contoso-jhut043 - Web Deploy.pubxml" />
+    <Content Include="Scripts\AssignmentModule.js" />
+    <Content Include="Scripts\assignments.js" />
     <Content Include="Scripts\jquery.fittext" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="index.html" />
