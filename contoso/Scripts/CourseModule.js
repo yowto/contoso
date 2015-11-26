@@ -11,6 +11,16 @@
                 }
             });
         },
+        getCourses: function (id,callback) {
+            $.ajax({
+                type: "GET",
+                dataType: "json",
+                url: "https://contoso-jhut043.azurewebsites.net/api/courses/" +id,
+                success: function (data) {
+                    callback(data);
+                }
+            });
+        },
         addCourse: function (course, callback) {
             $.ajax({
                 type: "POST",

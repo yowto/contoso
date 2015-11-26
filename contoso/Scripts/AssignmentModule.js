@@ -1,4 +1,4 @@
-﻿var CourseModule = (function () {
+﻿var AssignmentModule = (function () {
 
     return {
         getAssignments: function (callback) {
@@ -11,11 +11,11 @@
                 }
             });
         },
-        addAssignments: function (course, callback) {
+        addAssignments: function (assignment, callback) {
             $.ajax({
                 type: "POST",
                 dataType: "json",
-                data: course,
+                data: assignment,
                 url: "https://contoso-jhut043.azurewebsites.net/api/assignments",
                 success: function (data) {
                     callback();

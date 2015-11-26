@@ -14,6 +14,7 @@ namespace contoso.Models
         public int StudentID { get; set; }
         public int CourseID { get; set; }
         public DateTime DueDate { get; set; }
+        public string SubmitLink { get; set; }
 
         [JsonIgnore]
         public virtual ICollection<Course> Course { get; set; }

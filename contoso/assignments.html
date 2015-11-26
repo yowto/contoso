@@ -7,9 +7,9 @@
     <link href="Content/style.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/StudentModule.js"></script>
+    <script src="Scripts/AssignmentModule.js"></script>
     <script src="Scripts/facebooklogin.js"></script>
-    <script src="Scripts/index.js"></script>
+    <script src="Scripts/assignments.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
     <script>
         jQuery("#responsive_headline").fitText();
@@ -47,13 +47,21 @@
     <!--Main body-->
     <div class="container">
         <h1>Assignments</h1>
-        <ul>
-            <li>
-                <div>
-
-                </div>
-            </li>
-        </ul>
+        
+            <div class="table-responsive" id="assignment-table-area">
+                <table class="table table-striped spaced-table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Assignment Title</th>
+                            <th>Percent</th>
+                            <th>Course</th>
+                            <th>Due Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblassignmentscontent"></tbody>
+                </table>
+            </div>
+        
     </div>
 
 </body>
