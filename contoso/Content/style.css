@@ -10,3 +10,8 @@
     padding: 40px 20px;
     vertical-align:middle;
 }
+
+.chatline {
+    background-color: black;
+    color: white;
+}

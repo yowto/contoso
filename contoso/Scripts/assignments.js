@@ -23,7 +23,11 @@ function loadAssignments() {
             readField.setAttribute("id", "read" + assignments[i].CourseID);
             readField.setAttribute("float", "left");
             var assignmenttitlecol = document.createElement('td');
-            assignmenttitlecol.innerHTML = assignments[i].AssignmentTitle;
+            if (assignments[i].SubmitLink) {
+                assignmenttitlecol.innerHTML = assignments[i].AssignmentTitle + " <b>Submitted</b>";
+            } else {
+                assignmenttitlecol.innerHTML = assignments[i].AssignmentTitle + " <b>Not Submitted</b>";
+            }
 
             //editing form
             var editField = document.createElement('div');
@@ -69,22 +73,33 @@ function loadAssignments() {
             row.appendChild(duedatecol);
 
             assignmentsTable.appendChild(row);
-            submitAssignment(assignments[i].AssignmentID);
+            if (assignments[i].SubmitLink) {
+                $("#update" + assignments[i].AssignmentID).hide();
+            } else {
+                submitAssignment(assignments[i].AssignmentID, assignments[i]);
+            }
+            
             
         }
     }
 
 }
 
-function submitAssignment(ID) {
+function submitAssignment(ID, assignment) {
     var element = document.getElementById("submitLinkBtn" + ID);
     if (element) {
         element.addEventListener("click", function (event) {
             event.preventDefault();
+
             var assignmentID = parseInt(ID);
 
             var updatedAssignmentInfo = {
                 AssignmentID: assignmentID,
+                AssignmentTitle: assignment.AssignmentTitle,
+                Percent: assignment.Percent,
+                StudentID: assignment.StudentID,
+                CourseID: assignment.CourseID,
+                DueDate: assignment.DueDate,
                 SubmitLink: $("#submitLink"+ID).val()
             }
 

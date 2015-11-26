@@ -7,10 +7,11 @@
     <link href="Content/style.css" rel="stylesheet" />
     <script src="Scripts/jquery-1.9.1.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/StudentModule.js"></script>
-    <script src="Scripts/facebooklogin.js"></script>
-    <script src="Scripts/index.js"></script>
     <script src="Scripts/jquery.fittext.js"></script>
+    <script src="Scripts/jquery.todoList.js"></script>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+
     <script>
         jQuery("#responsive_headline").fitText();
     </script>
@@ -43,5 +44,26 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <!--Add to do list via jquery plugin-->
+        <div id="todolist"></div>
+    </div>
+    <script type="text/javascript">
+
+    (function($){$(function(){
+
+        
+
+        $("#todolist").todoList({
+            items: [
+                'Assignment1',
+                'Assignmnet 2',
+                'Test 1'
+            ]
+        });
+
+    });})(jQuery);
+
+    </script>
 </body>
 </html>
