@@ -10,6 +10,8 @@
 .spaced-table>tbody>tr>td{
     padding: 40px 20px;
     vertical-align:middle;
+    background-color: rgb(128, 128, 128);
+    color: black;
 }
 
 .chatline {
