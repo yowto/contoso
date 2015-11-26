@@ -65,6 +65,9 @@ function loadAssignments() {
             row.appendChild(percentcol);
 
             var coursecol = document.createElement('td');
+            CourseModule.getCourseByID(assignments[i].CourseID, function (courseFromID) {
+                console.log(courseFromID.Title);
+            });
             console.log(assignments[i].Course);
             row.appendChild(coursecol);
             

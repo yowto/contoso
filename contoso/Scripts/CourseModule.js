@@ -11,7 +11,7 @@
                 }
             });
         },
-        getCourses: function (id,callback) {
+        getCoursesByID: function (id,callback) {
             $.ajax({
                 type: "GET",
                 dataType: "json",
