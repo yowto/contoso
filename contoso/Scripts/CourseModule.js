@@ -47,9 +47,6 @@
                 success: function (data) {
                     callback();
                     console.log("updateCourse success");
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    alert("Failed " + textStatus + " " + errorThrown);
                 }
             })
         }

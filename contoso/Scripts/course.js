@@ -28,7 +28,29 @@ function loadCourses() {
             var coursetitlecol = document.createElement('td');
             coursetitlecol.innerHTML = courses[i].Title;
 
-            
+            //editing form
+            var editField = document.createElement('div');
+            editField.setAttribute("id", "update" + courses[i].CourseID);
+            editField.setAttribute("float", "left");
+            editField.setAttribute("clear", "left");
+            $("update" + courses[i].CourseID).hide();
+            var updateForm = document.createElement('form');
+            updateForm.setAttribute("role", "form");
+            var updateTitle = document.createElement('textarea');
+            updateTitle.setAttribute("id", "updateTitle" + courses[i].CourseID);
+            updateTitle.setAttribute("placeholder", "Enter new title here...");
+            updateTitle.required = true;
+            var updatePercentComplete = document.createElement('textarea');
+            updatePercentComplete.setAttribute("id", "updatePercentComplete" + courses[i].CourseID);
+            updatePercentComplete.setAttribute("placeholder", "Enter new percentage complete here...");
+            updatePercentComplete.required = true;
+            var updateCourseBtn = document.createElement('button');
+            updateCourseBtn.setAttribute("id", "updateCourseBtn" + courses[i].CourseID);
+            updateCourseBtn.innerHTML = "Update Course";
+            updateForm.appendChild(updateTitle);
+            updateForm.appendChild(updatePercentComplete);
+            updateForm.appendChild(updateCourseBtn);
+            editField.appendChild(updateForm);
             
             readField.appendChild(coursetitlecol);
             row.appendChild(readField);
@@ -58,6 +80,7 @@ function loadCourses() {
 
 
             deleteCourse(courses[i].CourseID);
+            editCourse(courses[i].CourseID);
             updateCourse(courses[i].CourseID);
         }
 
@@ -95,13 +118,30 @@ function deleteCourse(ID) {
             console.log("deleting course");
 
             location.reload();
-        })
+        });
     });
     
 }
 
-function updateCourse(ID) {
+function editCourse(ID) {
     document.getElementById("edit" + ID).addEventListener("click", function () {
         $("#update" + ID).toggle();
+    });
+}
+
+function updateCourse(ID) {
+    document.getElementById("updateCourseBtn" + ID).addEventListener("click", function () {
+        var courseID = parseInt(ID);
+
+        var updatedCourseInfo = {
+            CourseID : courseID,
+            Title: $("#updateTitle" + ID).val(),
+            PercentComplete: parseInt($("#updatePercentComplete" + ID).val())
+        }
+
+        CourseModule.updateCourse(courseID, updatedCourseInfo, function () {
+            console.log("updating course");
+            
+        });
     });
 }
