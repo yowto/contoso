@@ -1,4 +1,8 @@
-﻿.spaced-table>thead>tr>th{
+﻿body {
+    
+}
+
+.spaced-table>thead>tr>th{
     padding: 20px;
 }
 
