@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/CourseModule.js"></script>
+    <script src="Scripts/course.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="table-responsive" id="course-table-area">
+            <table class="table table-striped spaced-table table-hover">
+                <thead>
+                    <tr>
+                        <th>Course Title</th>
+                        <th>Percent Complete</th>
+                    </tr>
+                </thead>
+                <tbody id="tblcoursecontent"></tbody>
+            </table>
+        </div>
+        <form role="form">
+            <label>Add Course</label>
+            <textarea class=".form-control" id="coursename" maxlength="50" placeholder="Enter Course Title here..." rows="1" required></textarea>
+            <button class=".form-control btn btn-default" type="submit" id="create-course-btn">Create Course</button>
+        </form>
+    </div>
+    
+    
+</body>
+</html>

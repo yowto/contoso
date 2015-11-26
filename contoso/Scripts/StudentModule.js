@@ -11,13 +11,15 @@
                 }
             });
         },
-        addStudent: function (student) {
+        addStudent: function (student, callback) {
             $.ajax({
                 type: "POST",
                 dataType: "json",
+                data: student,
                 url: "https://contoso-jhut043.azurewebsites.net/api/students",
                 success: function (data) {
-                    callback(data);
+                    console.log("addstudent success");
+                    callback();
                 }
 
             });
