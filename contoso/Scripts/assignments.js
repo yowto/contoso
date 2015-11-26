@@ -48,10 +48,8 @@ function loadAssignments() {
 
             
             editField.appendChild(updateForm);
-            if (assignments[i].submitLink != null) {
-                $("update" + assignments[i].AssignmentID).hide();
-                editField.innerHTML = "You have already submitted";
-            }
+            
+           
 
             readField.appendChild(assignmenttitlecol);
             row.appendChild(readField);
@@ -63,36 +61,37 @@ function loadAssignments() {
             row.appendChild(percentcol);
 
             var coursecol = document.createElement('td');
-            loadCourseTitle();
-
-            function loadCourseTitle() {
-                var courseID = parseInt(assignments[i].CourseID);
-
-                CourseModule.getCourses(courseID, function () {
-                    getTitle(courseByID);
-                });
-
-                function getTitle(courseByID) {
-                    console.log(courseByID);
-                    coursecol.innerHTML = courseByID.CourseTitle;
-                }
-            }
+            console.log(assignments[i].Course);
             row.appendChild(coursecol);
             
             var duedatecol = document.createElement('td');
             duedatecol.innerHTML = assignments[i].DueDate;
-            row.appendChild(deletecol);
+            row.appendChild(duedatecol);
 
-            coursesTable.appendChild(row);
-
-
-            deleteCourse(courses[i].CourseID);
-            editCourse(courses[i].CourseID);
-            updateCourse(courses[i].CourseID);
+            assignmentsTable.appendChild(row);
+            submitAssignment(assignments[i].AssignmentID);
+            
         }
-
-
-
     }
 
+}
+
+function submitAssignment(ID) {
+    var element = document.getElementById("submitLinkBtn" + ID);
+    if (element) {
+        element.addEventListener("click", function (event) {
+            event.preventDefault();
+            var assignmentID = parseInt(ID);
+
+            var updatedAssignmentInfo = {
+                AssignmentID: assignmentID,
+                SubmitLink: $("#submitLink"+ID).val()
+            }
+
+            AssignmentModule.updateAssignment(assignmentID, updatedAssignmentInfo, function () {
+                console.log("updating assignment");
+
+            });
+        });
+    }
 }

@@ -11,7 +11,7 @@
                 }
             });
         },
-        addAssignments: function (assignment, callback) {
+        addAssignment: function (assignment, callback) {
             $.ajax({
                 type: "POST",
                 dataType: "json",
@@ -27,7 +27,7 @@
 
             });
         },
-        deleteAssignments: function (id, callback) {
+        deleteAssignment: function (id, callback) {
             $.ajax({
                 type: "DELETE",
                 dataType: "json",
@@ -38,7 +38,7 @@
                 }
             });
         },
-        updateAssignments: function (id, course, callback) {
+        updateAssignment: function (id, course, callback) {
             $.ajax({
                 type: "PUT",
                 dataType: "json",
